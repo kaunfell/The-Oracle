@@ -1,0 +1,9 @@
+To do list:
+
+-let the question be asked by pressing enter
+-make info area (footer)
+-modify font and color
+-new picture?
+-music
+-border around the name
+-border around the page?
