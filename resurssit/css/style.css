@@ -1,0 +1,122 @@
+body {
+    background-color: rgb(145, 22, 22);
+    font-size: 16px;
+    font-family: serif;
+    font-weight: 900;
+}
+
+/*Header, the Oracle*/
+.header{
+    text-align: center;
+    color: gold;
+    padding: 1px;
+
+    font-size: 2.5rem;
+    border: 2px solid gold;
+    margin: 10px auto;
+    width: 30%;
+}
+
+/*Input area*/
+.input, .question, .question p {
+    color: rgb(192, 192, 192);
+    text-align: center;
+
+}
+
+
+/*Your question*/
+.question {
+    text-align: center;
+}
+
+.question p {
+    display: inline-block;
+}
+
+
+/*The Oracle img and answer*/
+.oraclecontainer {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.oracle{
+    max-width:500px;
+    max-height:400px;
+}
+
+
+.bubble {
+    width: 800px;
+    height: 100px;
+    margin: 50px auto;
+    border: 6px solid #532121;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: antiquewhite;
+    border-radius: .4em;
+
+}
+
+
+
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+
+    border-bottom-color: antiquewhite;
+	border-top: 0;
+	margin-left: -15px;
+	margin-top: -15px;
+}
+
+.animate {
+    color: rgb(105, 18, 18);
+    font-size: 1.5rem;
+    overflow:hidden ; /*must be, it appears slowly and the rest is hidden before appearing*/
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    animation: 
+    typing 2s steps(40, end)
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+
+  /*Media queries*/
+
+  @media screen and (max-width: 680px) {
+    .header {
+        width: 80%; 
+    }
+
+    .bubble {
+        width: 80%;
+    }
+
+
+}
+
+
+  @media screen and (max-width: 400px) {
+    .header, .bubble {
+        width: 100%;
+    }
+}

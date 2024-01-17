@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Oracle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./resurssit/css/style.css" rel="stylesheet">
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+
+<!-- header -->
+    <section class="header">
+
+    <h1>The Oracle<h1> 
+    </section>
+
+
+
+<!-- input section-->
+    <section class="input">
+        <label for="question">Your question:</label>
+        <input type="text" id="question" name="question" placeholder="ask a question">
+        <button type="submit" id="submit" onclick="getValue()">Ask</button>
+
+    </section>   
+
+<!--You asked-->
+    <section class="question">
+    <p>You: </p>
+    <p  id="userQuestion"></p>
+    </section>
+
+
+<!-- oracle picture and answer -->
+
+    <section class="oraclecontainer">
+     <div >
+    <img class="oracle" src="resurssit/kuvat/oracle_transparent.png">
+     </div>
+    <div class="bubble">
+     <p id="answer" class="answeranimate"></p>
+    </div>
+    </section>
+
+
+    </body>
+</html>
+
+<!-- C:\Users\Jenny\.vscode\VS_projekti_Omat\JavaScript\The Oracle\index.html -->
