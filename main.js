@@ -3,13 +3,25 @@
 
 // User question function
 function getValue(){
+
+
+  const answerElement = document.getElementById('answer');
+
     const value = document.querySelector('#question').value;
     
     document.getElementById('userQuestion').textContent = value;
+
+      if(value.trim() === '') {
+        document.getElementsByClassName('error')[0].style.display = 'block';
+        answerElement.innerHTML = '';
+      } else {
+        document.getElementsByClassName('error')[0].style.display = 'none';
+      
+
     document.getElementById('question').value=''; //clears the question input after pressing "Ask" button
-  
+    answerElement.innerHTML = '';
     getAnswer(); //calling this function inside getValue function triggers it when pressing Ask-button
-  
+      }
   
   }
   
