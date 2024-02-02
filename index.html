@@ -23,7 +23,7 @@
 <!-- input section-->
     <section class="input">
         <label for="question">Your question:</label>
-        <input type="text" id="question" name="question" placeholder="ask a question">
+        <input type="text" id="question" name="question" placeholder="ask a question" onkeyup="handleKeyPress(event)">
         <button type="submit" id="submit" onclick="getValue()">Ask</button>
     </section>   
 
@@ -37,11 +37,9 @@
       <p class="error">Hey, ask a question!</p>
     </div>
 
-
     <div>
-      <p class="error">Hey, ask a question!</p>
+        <img  id="herbert" src="cat_animation800.gif" height="400" width="600">
     </div>
-
 
 <!-- oracle picture and answer -->
 

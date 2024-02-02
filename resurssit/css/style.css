@@ -68,6 +68,12 @@ body {
 
 }
 
+#herbert {
+    display: none;
+    position: absolute;
+    right: 10%;
+    top: 40%;
+}
 
 
 /*The Oracle img and answer*/
@@ -89,8 +95,8 @@ body {
 
 
 .bubble {
-    width: 800px;
-    height: 100px;
+    width: 1000px;
+    height: 200px;
     margin: 50px auto;
     border: 6px solid #532121;
     padding: 20px;
