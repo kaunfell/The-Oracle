@@ -271,7 +271,17 @@ function getAnswer(value) {
   
     
   //Herbert the Wise
-  if ((lowercasedValue.includes('cat') || lowercasedValue.includes("'cat's") ) && (lowercasedValue.includes('name') || lowercasedValue.includes('your'))) {
+if (lowercasedValue.includes('missing') && lowercasedValue.includes('cat')) {
+    answer = "Yes, he is somewhere. Do you know his name?"; 
+}else if (lowercasedValue.includes('cat') || lowercasedValue.includes('herbert') && lowercasedValue.includes('ask')) {
+    answer = "You can ask when you find him. You should call him by his name."; 
+     if(document.getElementById('herbert').style.display === 'block') {
+    answer = "Now listen to this wise answer!";
+    document.getElementsByClassName('herbertBubble')[0].style.display = 'block';
+    }
+
+
+}else if ((lowercasedValue.includes('cat') || lowercasedValue.includes("'cat's") ) && (lowercasedValue.includes('name') || lowercasedValue.includes('your'))) {
     answer = "His name is Herbert the Wise.";
 } else if (lowercasedValue.includes('herbert')) {
     answer = "Yes, he is my cat, but he is missing. Could you help me to find him?"; 
