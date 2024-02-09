@@ -27,10 +27,10 @@ body {
 .firstcontainer {
     display: flex;
     justify-content: flex-end;
-    align-items: right;
+    align-items: flex-start;
 
     flex-direction: column;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     width:160px;
     padding: 1px;
     margin: 1px;
@@ -40,6 +40,13 @@ body {
 
 }
 
+label[for="question"], 
+.you {
+    margin-left: auto;
+
+    color: rgb(182, 119, 77);
+    font-size: 1.3rem;
+}
 
 
 .inputbox {
@@ -50,18 +57,7 @@ body {
 
 
 /*Your question*/
-/*.secondContainer {
-    display: flex;
-    justify-content: center;
-    align-items: right;
-    flex-direction: column;
-    width: 160px;
-    height: 50%;
-    font-size: 1.5rem;
-    margin: 1px;
-    padding: 1px;
 
-}*/
 .userQuestionContainer {
     display: flex;
  
@@ -69,7 +65,7 @@ body {
     flex-direction: row;
     width: 350px;
     height: 60%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 1px;
     padding: 1px;
 
@@ -83,22 +79,9 @@ body {
 
     width: 60%;
     height: 20px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
-/*.askButtonContainer {
 
-    display: flex;
-    align-items: right;
-    flex-direction: column;
-    width: 200px;
-    font-size: 1.5rem;
-
-    color:  rgb(182, 119, 77);
-    border: 2px solid rgb(138, 68, 22);
-    padding: 2px;
-    margin: 1px;;
-
-}*/
 
 .askButton {
     width: 50px;
