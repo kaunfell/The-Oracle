@@ -14,25 +14,106 @@ body {
     font-size: 2.5rem;
     border: 2px solid gold;
     margin: 10px auto;
+    padding: 5px 50px;
     width: 30%;
 }
 
 /*Input area*/
-.input, .question, .question p {
-    color: rgb(192, 192, 192);
-    text-align: center;
+.inputArea {
+    display: flex;
+    justify-content: center;
 
 }
+.firstcontainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+
+    flex-direction: column;
+    font-size: 1.5rem;
+    width:160px;
+    padding: 1px;
+    margin: 1px;
+
+    color: rgb(182, 119, 77);
+
+
+}
+
+
+
+.inputbox {
+    width: 250px;
+    height: 20px;
+}
+
 
 
 /*Your question*/
-.question {
-    text-align: center;
+/*.secondContainer {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    flex-direction: column;
+    width: 160px;
+    height: 50%;
+    font-size: 1.5rem;
+    margin: 1px;
+    padding: 1px;
+
+}*/
+.userQuestionContainer {
+    display: flex;
+ 
+    align-items: right;
+    flex-direction: row;
+    width: 350px;
+    height: 60%;
+    font-size: 1.5rem;
+    margin: 1px;
+    padding: 1px;
+
+  
+
 }
 
-.question p {
-    display: inline-block;
+#userQuestion {
+    width: 200px;
+    color:  rgb(182, 119, 77);
+
+    width: 60%;
+    height: 20px;
+    font-size: 1.5rem;
 }
+/*.askButtonContainer {
+
+    display: flex;
+    align-items: right;
+    flex-direction: column;
+    width: 200px;
+    font-size: 1.5rem;
+
+    color:  rgb(182, 119, 77);
+    border: 2px solid rgb(138, 68, 22);
+    padding: 2px;
+    margin: 1px;;
+
+}*/
+
+.askButton {
+    width: 50px;
+    height: 23px;
+
+    text-align: center;
+    color: rgb(71, 27, 27);
+    font-size: .9rem;
+    border: 2px solid gold;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+}
+
 
 
 /*Error, bubble*/
@@ -103,6 +184,7 @@ body {
     text-align: center;
     display: flex;
     align-items: center;
+    justify-items: center;
     justify-content: center;
     position: relative;
     background-color: antiquewhite;
@@ -125,6 +207,7 @@ body {
 	border-top: 0;
 	margin-left: -25px;
 	margin-top: -25px;
+
 }
 
 .animate {
@@ -133,13 +216,22 @@ body {
     overflow:hidden ; /*must be, it appears slowly and the rest is hidden before appearing*/
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    word-wrap: break-word;
     letter-spacing: .15em;
-    animation: 
-    typing 2s steps(40, end)
+    animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+    display: block;
+    max-height: 3.5rem;
+
 }
+
+
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from { 
+        width: 0;
+}
+    to  { 
+        width: 100%;
+    }
   }
 
 

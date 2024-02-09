@@ -7,8 +7,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta google-site-verification: google0f303ee427122e7c.html>
-        <link href="./resurssit/css/style.css" rel="stylesheet">
-        <script src="main.js" defer></script>
+        <link href="style.css" rel="stylesheet">
+        <script src="testoraakkeli.js" defer></script>
     </head>
     <body>
 
@@ -21,22 +21,39 @@
 
 
 <!-- input section-->
-    <section class="input">
+    <section class="inputArea">
+       <div class="firstcontainer">
         <label for="question">Your question:</label>
-        <input type="text" id="question" name="question" placeholder="ask a question" onkeyup="handleKeyPress(event)">
-        <button type="submit" id="submit" onclick="getValue()">Ask</button>
+        <p class="you">You: </p>
+                             
+       </div>
+       <div class="secondContainer">
+        <input class="inputbox" type="text" id="question" name="question" placeholder="ask a question" onkeyup="handleKeyPress(event)">
+                <button class="askButton" type="submit" id="submit" onclick="getValue()">Ask</button>
+       <div class="userQuestionContainer">
+        <p  id="userQuestion"></p> 
+       </div>
+        </div>
+
+
+
+        
+ 
+       <div class="askButtonContainer">
+
+       </div>
+
     </section>   
 
-<!--You asked-->
-    <section class="question">
-    <p>You: </p>
-    <p  id="userQuestion"></p>
-    </section>
 
+
+<!--errormessage -->
     <div>
       <p class="error">Hey, ask a question!</p>
     </div>
 
+
+<!-- cat picture -->
     <div>
         <img  id="herbert" src="cat_animation800.gif" height="400" width="600">
     </div>
@@ -45,7 +62,7 @@
 
     <section class="oraclecontainer">
      <div >
-    <img class="oracle" src="resurssit/kuvat/oracle_transparent.png">
+    <img class="oracle" src="oracle_transparent.png">
      </div>
 
     <div class="bubble">
@@ -67,4 +84,4 @@
     </body>
 </html>
 
-<!-- C:\Users\Jenny\.vscode\VS_projekti_Omat\JavaScript\The Oracle\index.html -->
+<!-- C:\Users\Jenny\.vscode\VS_projekti_Omat\JavaScript\testialue\index.html  -->

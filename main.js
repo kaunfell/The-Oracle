@@ -1,19 +1,23 @@
 /**/
 const forbiddenWords = ["stupid", "dumb", "idiot", "hate", "kill", "killing", "die", "ugly", "fat", "suicide", "suicidal", 'self-harm']
 
+
 // User question function
 function getValue() {
+
     const answerElement = document.getElementById('answer');
     const value = document.querySelector('#question').value;
     document.getElementById('userQuestion').textContent = value;
 
 
-    const containsForbiddenWord = forbiddenWords.some(word => value.toLowerCase().includes(word.toLowerCase())); //uusi forbidden
+
+    const containsForbiddenWord = forbiddenWords.some(word => value.toLowerCase().includes(word.toLowerCase())); 
 
     if (containsForbiddenWord) {
         answerElement.innerHTML= "I do not answer to questions like that.";  //uusi forbidden, myös laittaa, poistaa ja laittaa animaten
         answerElement.classList.add("animate");
         document.getElementById('question').value = '';
+        
 
         answerElement.classList.remove("animate");
 
@@ -37,16 +41,17 @@ function getValue() {
 // Answer function
 function getAnswer(value) {
   const randomNumber = Math.floor(Math.random() * 15);
-  
+  const randomNumSmall = Math.floor(Math.random() * 5);
+
   const lowercasedValue = value.toLowerCase();
 
     let answer = '';
 
     const answers = {
         why:  [
-            'Because my cat has a wonderful name.', //CAT
+            'Because.',
             'Because of reasons.',
-            'Because of my cat.',   //CAT
+            'Because of my cat. He has a cool name.',   //CAT
             'Because I am the Oracle.',
             'Because of one hairy gnome.',          //5
             'Whatever reason.',
@@ -63,16 +68,17 @@ function getAnswer(value) {
 
 
     ],
-        how:  [
-            'Like my cat does.',           //CAT
-            'No idea, but do you know the name of my cat?', //CAT
+        how:  { 
+            general: [
+            'How? No idea, but do you know the name of my cat?',           //CAT
+            'Hmm, how... do not ask me. Ask my cat.', //CAT
             'Like the wizard looking guy next door.',
             'Like Gandalf would.',
             'Like a boss dragon.',             //5
             'Like the witch looking woman next door.',
             'With a great attitude.',
             'With an akward smile on your face.',
-            'Like hairy gnomes do.',
+            'I have an idea, but I cannot tell you.',
             'With a little help from your friends.',           //10
             'Try the direct approach and the indirect approach after that.',
             'With the magic of positivity.',
@@ -80,12 +86,30 @@ function getAnswer(value) {
             'With strong arms and a brave heart.',
             'I might know some magic but how would I ever know that?',
             'Just push it through.', //15'
-
-
         ],
+
+
+
+        "how many": [
+            'How many? Too hard to count.',
+            'How many? Multiple it by 2 and add 3.',
+            'How many? Not enough.',
+            'How many? Maybe something between 1-150.',
+            'How many? Not so many.', //5
+        ],
+
+        "how much": [
+            'How much? I do not have time to count.',
+            'How much? What if it is too much?',
+            'How much? Not enough.',
+            'How much? A lot.',
+            'How much? Not so much.', //5
+        ],   
+
+    },
         what: [
             'You know what? My cat might know.', //CAT
-            'No idea. But do you know the name of my cat?', //CAT
+            'No idea. But do you know the name of my cat?', 
             'What?',
             'It is a mystery...',
             'You already know the answer.', //5
@@ -104,8 +128,8 @@ function getAnswer(value) {
 
         ],
         when: [
-            'When you know the name of my cat.', //CAT
-            'When my cat is back.', //CAT
+            'Just when you know the name of my cat.', //CAT
+            'When my cat is back here.', //CAT
             'When you hear my cat purring.',
             'When the time is right.',
             'When the night falls.', //5
@@ -121,9 +145,9 @@ function getAnswer(value) {
             'When you are being optimistic.', //15
         ],
         where: [
-            'Ask your hairy friend or my cat.', //CAT
+            'No idea. But do you know the name of my cat?', //CAT
             'Where the light touches the ground.',
-            'I do not know, but do you know where this is: "second star to the right, and straight on till morning.',
+            'No idea, but where this is: "second star to the right, and straight on till morning.',
             'Hmm... under the rainbow?',
             'Your dog sure knows the answer.', //5
             'Just try to remember.',
@@ -141,8 +165,8 @@ function getAnswer(value) {
 
     ],
         "am I": [  //ottaakin tavun mukaan, esim. "name" johti tänne, siksi "am I"
-            'My cat likes you, so you must be ok.', //15 //CAT
-            'Nobody is perfect, except the name of my cat.', //CAT
+            'My cat with a great name likes you, so you must be ok.', //15 //CAT
+            'Nobody is perfect, except my cat with a great name.', //CAT
             'We think you are doing great.',
             'You are awesome, like a fancy glitter unicorn.',  //UNICORN
             'Get yourself together and you will be fine.', //5
@@ -159,8 +183,8 @@ function getAnswer(value) {
 
         ],
         if: [
-            'Then do not worry. My cat does not either.', //CAT   
-            'Then you should also know the name of my cat.', //CAT
+            'In that case, do not worry. My cat does not either.', //CAT   
+            'Then you can pet my cat.', //CAT
             'It is ok, it will go well.',
             'In any case, you have to trust your intuition.',
             'If this happens, you will figure it out.', //5
@@ -176,15 +200,15 @@ function getAnswer(value) {
             'In that case, KEEP CALM AND TROLL ON.', //15
         ],
         should: [
-            'I am not sure, but I think my cat should.', //CAT
-            'No, but you should know the name of my cat.', //CAT
+            'No. But you should know the name of my cat.', //CAT
+            'Perhaps you should.',
             'Maybe you should, maybe you should not.',
             'Is it a recommendation or is it optional?',
             "'Should' is a strong word.",               //5
             "There are not many 'shoulds' in the world.",
             "Should you? Should I?",
             "Maybe. I am not sure about the outcome, but it will be fun!",
-            "If it's going to improve your or someone else's life, then you should.",
+            "If it's going to improve your life, then you should.",
             'If it is going to help someone, then you should.', //10
             'But does it help anyone?',
             'So many shoulds, so little time.',
@@ -195,8 +219,8 @@ function getAnswer(value) {
         ],
 
         "do you": [
-            'Not me, but my cat is a great listener.', //CAT
-            'I am not sure, but I think my cat does.', //CAT 
+            'Not me, but my cat with a great name is a good listener.', //CAT
+            'I do not. But do you know the name of my cat?', //CAT 
             'Thanks for asking, but I am not sure.',
             'Me? I am just a simple Oracle.',
             'Yes, yes, very funny. Next question.', //5
@@ -206,15 +230,15 @@ function getAnswer(value) {
             'Occasionally.',
             'Who? Me? Pffft.',  //10
             'I know all the answers ecxept this one.',
-            'No, but do you know the name of my cat?', //CAT
+            'Are you really asking me?',
             'Better not tell my personal secrets.',
-            'Do I what? I did not understand.',
+            'Do I what? I do not understand.',
             'I would not advise anyone to admit that.', //15
 
 
         ],
 
-        1: 'Yes - definitely. Like my cat would say.', //CAT
+        1: 'No idea, but do you know the name of my cat?', //CAT
         2: 'The answer is... umm, how should I read this?.',
         3: 'Not so sure, but my cat might know.', //CAT
         4: 'Well... I would think about it.',
@@ -227,51 +251,58 @@ function getAnswer(value) {
         11: 'Do I look like I know? Ok, I know. Hehe.',
         12: 'Let me see... I will tell you later.',
         13: 'Are you sure you want to ask that?',
-        14: 'I am feeling very inspired now, ask later.',
+        14: 'Hidden in the mists of magic: It is a mystery.',
         15: 'I am baking right now, ask later.',
 
 
 
     };
 
-    const amI = answers["am I"];
+
     const magicWords = ['hocus pocus', 'hocuspocus', 'abracadabra', 'alakazam', 'shazam', 'presto', 'sim sala bim', 'simsalabim', 'open sesame'];
   
     
-    //Herbert the Wise
-    if (lowercasedValue.includes('cat' || "cat's") && lowercasedValue.includes('name')) {
-        answer = "His name is Herbert the Wise.";
-    } else if (lowercasedValue.includes('herbert')) {
-        answer = "Yes, he is my cat, but he is missing. Could you help me to find him?"; 
-         if(lowercasedValue.includes('herbert') && lowercasedValue.includes('where')) {
-        answer = "Last time I saw him, he was in the library. I think he was looking for something.; ";
-        } else if (lowercasedValue.includes( 'herbert')  && lowercasedValue.includes('library')) {
-        answer = "Yes, I think he might be there...";
+  //Herbert the Wise
+  if ((lowercasedValue.includes('cat') || lowercasedValue.includes("'cat's") ) && (lowercasedValue.includes('name') || lowercasedValue.includes('your'))) {
+    answer = "His name is Herbert the Wise.";
+} else if (lowercasedValue.includes('herbert')) {
+    answer = "Yes, he is my cat, but he is missing. Could you help me to find him?"; 
+     if(lowercasedValue.includes('herbert') && lowercasedValue.includes('where')) {
+    answer = "Last time I saw him, he was in the library.";
+    } else if (lowercasedValue.includes( 'herbert')  && lowercasedValue.includes('library')) {
+    answer = "Yes, I think he might be there...";
 
-   
-        }else if (lowercasedValue.includes('herbert') && magicWords.some(word => lowercasedValue.includes(word))) {
-            answer = "WOOOW.";  
-            document.getElementById('herbert').style.display = 'block'; //shows the hidden image of Herbert
 
-          
-         
-        }
+    }else if (lowercasedValue.includes('herbert') && magicWords.some(word => lowercasedValue.includes(word))) {
+        answer = "WOOOW! You found him!";  
+        document.getElementById('herbert').style.display = 'block'; //shows the hidden image of Herbert
 
-    }else if (lowercasedValue.includes( 'how')  && lowercasedValue.includes('library')) {
-        answer = "You cannot go there, it is a secret place. But you can use magic words to call Herbert.";     
-    }else if(magicWords.some(word => lowercasedValue.includes(word)) && !lowercasedValue.includes('herbert')) {
-        answer = "I think something is missing, my friend.";
-  
+      
+     
+    }
 
-        
+}else if ((lowercasedValue.includes('where') || lowercasedValue.includes('how')) && lowercasedValue.includes('library')) {
+    answer = "It is a secret place. But you can use magic words to call Herbert.";
+}else if(magicWords.some(word => lowercasedValue.includes(word)) && !lowercasedValue.includes('herbert')) {
+    answer = "I think something is missing, my friend.";
+}else if (lowercasedValue.includes('magic words')) {
+    answer = 'Yes, there are many! Do you know any?';
+
+       
+     
 
 
     //question type
     }else if (lowercasedValue.includes('why')) {
         answer = answers.why[randomNumber];
 
+
+    }else if (lowercasedValue.includes('how many')) {
+        answer = answers.how["how many"][randomNumSmall];
+    }else if (lowercasedValue.includes('how much')) {
+        answer = answers.how["how much"][randomNumSmall];
     } else if (lowercasedValue.includes('how')) {
-        answer = answers.how[randomNumber];
+        answer = answers.how.general[randomNumber];
     } else if (lowercasedValue.includes('what')) {
         answer = answers.what[randomNumber];
     } else if (lowercasedValue.includes('when')) {
@@ -279,7 +310,7 @@ function getAnswer(value) {
     } else if (lowercasedValue.includes('where')) {
         answer = answers.where[randomNumber];
     } else if (lowercasedValue.includes('am I')) {    //AM I test
-        answer = amI[randomNumber];
+        answer = ['am I'][randomNumber];
     } else if (lowercasedValue.includes('if')) {
         answer = answers.if[randomNumber];
     }else if (lowercasedValue.includes('should')) {
@@ -303,6 +334,7 @@ function getAnswer(value) {
     setTimeout(function () {
         answerElement.classList.add("animate");
     }, 10);
+
 
 
 //for things to trigger when pressing enter
