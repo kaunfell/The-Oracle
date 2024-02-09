@@ -7,7 +7,7 @@ function getValue() {
 
     const answerElement = document.getElementById('answer');
     const value = document.querySelector('#question').value;
-    document.getElementById('userQuestion').textContent = value;
+    document.getElementById('userQuestion').textContent ='"' + value + '"';
 
 
 
@@ -104,7 +104,15 @@ function getAnswer(value) {
             'How much? Not enough.',
             'How much? A lot.',
             'How much? Not so much.', //5
-        ],   
+        ], 
+        "how are you": [
+            'I am fine, thank you. But my cat is missing.', //CAT
+            'I am actually doing great, but my cat is missing.', //CAT
+            'Well, everyday is a blessing.',
+            'I am doing great, thank you. How are you?',
+            'Healthy as a horse, thank you. How are you?', //5
+
+        ], 
 
     },
         what: [
@@ -301,6 +309,8 @@ function getAnswer(value) {
         answer = answers.how["how many"][randomNumSmall];
     }else if (lowercasedValue.includes('how much')) {
         answer = answers.how["how much"][randomNumSmall];
+    }else if (lowercasedValue.includes('how are you') || lowercasedValue.includes('you doing'))  {
+        answer = answers.how["how are you"][randomNumSmall];
     } else if (lowercasedValue.includes('how')) {
         answer = answers.how.general[randomNumber];
     } else if (lowercasedValue.includes('what')) {
