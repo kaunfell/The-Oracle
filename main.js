@@ -271,14 +271,14 @@ function getAnswer(value) {
   
     
   //Herbert the Wise
-if (lowercasedValue.includes('missing') && lowercasedValue.includes('cat')) {
-    answer = "Yes, he is somewhere. Do you know his name?"; 
-}else if (lowercasedValue.includes('cat') || lowercasedValue.includes('herbert') && lowercasedValue.includes('ask')) {
+  if (lowercasedValue.includes('missing') && lowercasedValue.includes('cat')) {
+    answer = "Yes, he is missing. Do you know his name?"; 
+}else if (lowercasedValue.includes('ask')  && lowercasedValue.includes('cat')){
     answer = "You can ask when you find him. You should call him by his name."; 
      if(document.getElementById('herbert').style.display === 'block') {
     answer = "Now listen to this wise answer!";
     document.getElementsByClassName('herbertBubble')[0].style.display = 'block';
-    }
+    } 
 
 
 }else if ((lowercasedValue.includes('cat') || lowercasedValue.includes("'cat's") ) && (lowercasedValue.includes('name') || lowercasedValue.includes('your'))) {
