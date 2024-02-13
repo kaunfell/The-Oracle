@@ -1,5 +1,28 @@
 /**/
-const forbiddenWords = ["stupid", "dumb", "idiot", "hate", "kill", "killing", "die", "ugly", "fat", "suicide", "suicidal", 'self-harm']
+const forbiddenWords = ["stupid", "dumb", "idiot", "hate", "kill", "killing", "die", "ugly", "fat", "suicide", "suicidal", 'self-harm', "sex", "sexy", "masturbate",
+"boobs", "dick", "penis"]
+
+
+//dragon trigger
+function dragonTrigger() {
+    const answerElement = document.getElementById('answer');
+    answerElement.innerHTML = "I warned you!";
+
+    // Display the dragon image
+    const dragonImage = document.querySelector('.dragon');
+    const yesNoContainer = document.getElementsByClassName('yesnocontainer')[0];
+    const flamesContainer = document.getElementsByClassName('flamescontainer')[0];
+
+   dragonImage.style.display = 'block';
+   yesNoContainer.style.display = 'block';
+   flamesContainer.style.display = 'block';
+    setTimeout(() => {
+        dragonImage.style = 'none';
+        yesNoContainer.style.display = 'none';
+        flamesContainer.style.display = 'none';
+    }, 4000);
+}
+
 
 
 // User question function
@@ -113,8 +136,45 @@ function getAnswer(value) {
             'Healthy as a horse, thank you. How are you?', //5
 
         ], 
+        "how old": [
+            'Age is just a number.',
+            'Old enough to know better.',
+            'Young enough to have fun but too naive to know better.',
+            'Old enough to be wise.',
+            'Young enough to be curious.', //5
+
+        ],
+        "how often": [
+            "How often? Not so often.",
+            "How often? I should not tell you.",
+            "How often? I am not the right person to ask.",
+            "How often? What do you think?",
+            "How often? Ask your mother.", //5
+        ],
+
+        "how about": [
+            "How about 'no'?",
+            "How about we try to ask better questions?",
+            "How about we try to find my cat?", //CAT
+            "How about we try to find the meaning of life?",
+            "How about we try to find the best pizza in the world?", //5
+        ],
+        "how dare you": [
+            "How dare you?",
+            "I let this one speak for itself.",
+            "I dare you to ask a better question.",
+            "...",
+            "Stop whining.", //5
+        ],
 
     },
+        "who": [
+        "Your mama.",
+        "The person you least expect.",
+        "A hairy gnome.",
+        "Gandalf the White.",
+        "A dragon.", //5
+        ],
         what: [
             'You know what? My cat might know.', //CAT
             'No idea. But do you know the name of my cat?', 
@@ -247,7 +307,7 @@ function getAnswer(value) {
         ],
 
         1: 'No idea, but do you know the name of my cat?', //CAT
-        2: 'The answer is... umm, how should I read this?.',
+        2: 'The answer is... umm, how should I read this?',
         3: 'Not so sure, but my cat might know.', //CAT
         4: 'Well... I would think about it.',
         5: "It could be 'yes' if you had a healthy breakfast.",
@@ -281,8 +341,10 @@ function getAnswer(value) {
     } 
 
 
-}else if ((lowercasedValue.includes('cat') || lowercasedValue.includes("'cat's") ) && (lowercasedValue.includes('name') || lowercasedValue.includes('your'))) {
+}else if ((lowercasedValue.includes('cat') || lowercasedValue.includes("cat's") ) && (lowercasedValue.includes('name') && lowercasedValue.includes('your'))) {
     answer = "His name is Herbert the Wise.";
+}else if(lowercasedValue.includes('cat') && lowercasedValue.includes('you') ) {
+    answer = "Yes, I have a cat. Do you know his name?"
 } else if (lowercasedValue.includes('herbert')) {
     answer = "Yes, he is my cat, but he is missing. Could you help me to find him?"; 
      if(lowercasedValue.includes('herbert') && lowercasedValue.includes('where')) {
@@ -295,8 +357,6 @@ function getAnswer(value) {
         answer = "WOOOW! You found him!";  
         document.getElementById('herbert').style.display = 'block'; //shows the hidden image of Herbert
 
-      
-     
     }
 
 }else if ((lowercasedValue.includes('where') || lowercasedValue.includes('how')) && lowercasedValue.includes('library')) {
@@ -306,7 +366,21 @@ function getAnswer(value) {
 }else if (lowercasedValue.includes('magic words')) {
     answer = 'Yes, there are many! Do you know any?';
 
-       
+
+ //Dragon
+}else if(lowercasedValue.includes('dragon') || lowercasedValue.includes("dragon's") && lowercasedValue.includes('lair')) {
+    answer = "I would not go there, but if you really want to, press yes.";
+    document.getElementsByClassName('yesnocontainer')[0].style.display = 'block';
+        
+
+
+
+    
+        
+
+
+
+    
      
 
 
@@ -315,14 +389,25 @@ function getAnswer(value) {
         answer = answers.why[randomNumber];
 
 
+
     }else if (lowercasedValue.includes('how many')) {
         answer = answers.how["how many"][randomNumSmall];
     }else if (lowercasedValue.includes('how much')) {
         answer = answers.how["how much"][randomNumSmall];
     }else if (lowercasedValue.includes('how are you') || lowercasedValue.includes('you doing'))  {
         answer = answers.how["how are you"][randomNumSmall];
-    } else if (lowercasedValue.includes('how')) {
+    }else if (lowercasedValue.includes('how old')) {
+        answer = answers.how["how old"][randomNumSmall];
+    }else if (lowercasedValue.includes('how often')) { //
+        answer = answers.how["how often"][randomNumSmall];
+    }else if (lowercasedValue.includes('how about')) { //
+        answer = answers.how["how about"][randomNumSmall];
+    }else if (lowercasedValue.includes('how dare you')) { //
+        answer = answers.how["how dare you"][randomNumSmall];
+    }else if (lowercasedValue.includes('how')) {
         answer = answers.how.general[randomNumber];
+    }else if (lowercasedValue.includes('who')) {
+        answer = answers["who"][randomNumSmall];
     } else if (lowercasedValue.includes('what')) {
         answer = answers.what[randomNumber];
     } else if (lowercasedValue.includes('when')) {
@@ -337,6 +422,8 @@ function getAnswer(value) {
         answer = answers.should[randomNumber];
     }else if (lowercasedValue.includes('do you')) {
         answer = answers["do you"][randomNumber];
+    }else if (lowercasedValue.includes('who')) {
+        answer = answers["who"][randomNumber];
     } else {
         answer = answers[randomNumber];
     }
@@ -363,4 +450,7 @@ function handleKeyPress(event) {
     if (event.key === 'Enter') {
         getValue();
     }
+
+
+    
 }
