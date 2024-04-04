@@ -12,7 +12,7 @@ body {
     padding: 1px;
 
     font-size: 2.6rem;
-    border: 2px solid gold;
+    border: 4px solid gold;
     margin: 20px auto;
     padding: 5px 50px;
     width: 30%;
@@ -52,6 +52,9 @@ label[for="question"],
 .inputbox {
     width: 250px;
     height: 20px;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    border: 2px solid rgb(114, 49, 23);
 }
 
 
@@ -88,10 +91,11 @@ label[for="question"],
     width: 50px;
     height: 23px;
 
+    background-color: antiquewhite;
     text-align: center;
     color: rgb(71, 27, 27);
     font-size: .9rem;
-    border: 2px solid gold;
+    border: 2px solid rgb(114, 49, 23);
     border-radius: 4px;
     cursor: pointer;
 
@@ -180,20 +184,69 @@ label[for="question"],
     justify-content: center;
     align-items: center;
 
+    
 
 }
 
-
+.oracleBottom {
+    position: relative;
+    display: none;
+    max-width:500px;
+    max-height:400px;
+    
+    
+}
 .oracle{
+    position: relative;
     max-width:500px;
     max-height:400px;
 
-
-
+    
+    
+    
 }
 
 
-.bubble {
+.eyes {
+    z-index: -1;
+    
+    position: absolute;
+    top: 472px;
+    left: 25.5px;
+    
+    width: 100%;
+    
+
+}
+
+.leftEye {
+    
+    top: 479px;
+    /*left: 958px;*/
+    left: 50.8%;
+
+
+    
+    margin-right: 15px;
+    width: 11.5px;
+}
+
+.rightEye {
+    
+    top: 476px;
+    right: 47.8%;
+
+    width: 11px;
+    margin-bottom: 3.8px;
+}
+
+.leuka {
+    position: absolute;
+}
+
+/*the first version bubble*/
+bubble {
+
     width: 1000px;
     height: 200px;
     margin: 50px auto;
@@ -209,11 +262,30 @@ label[for="question"],
     border-radius: .4em;
 
 }
+.bubble {
+    background-image: url(".././kuvat/bubble_basic.png");
+    background-repeat: no-repeat;
+    background-size: 1040px 320px;
+    background-position: top;
+    
+    height: 200px;
+  
+    margin: 0px auto;
+
+    padding: 20px;
+    width: 1000px;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    position: relative;
+}
 
 
 
-
-.bubble:after {
+bubble:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -227,6 +299,23 @@ label[for="question"],
 	margin-top: -25px;
 
 }
+
+storyBubble {
+    width: 1000px;
+    height: 200px;
+    margin: 50px auto;
+    border: 6px solid #532121;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: antiquewhite;
+    border-radius: .4em; 
+}
+
 .dragoncontainer {
 
  
@@ -291,6 +380,29 @@ label[for="question"],
 }
 
 
+footer {
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 120px;
+    bottom: 10px;
+    
+}
+
+
+.updated {
+
+    text-align: center;
+    margin-top: 150px;
+    bottom: 10px;
+    color: rgb(80, 22, 22);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: small;
+}
+
+
+
 @keyframes typing {
     from { 
         width: 0;
@@ -303,8 +415,25 @@ label[for="question"],
 
   /*Media queries*/
 
-  /* 768px */
+  @media screen and (max-width: 1035px){
+    .eyes {
+        display: none;
+    }
+    .oracle {
+        display: none;
+    }
+    .oracleBottom {
+        display: inline;
+    }
+  }
+
+
+
+
+
+  /* 1000px */
 @media screen and (max-width: 1000px){
+    
     
 
     .header {
@@ -325,7 +454,6 @@ label[for="question"],
         justify-content: center;
     }
 
-    
 
 }
 
