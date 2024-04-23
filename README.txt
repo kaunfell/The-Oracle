@@ -1,5 +1,7 @@
 The Oracle
 
+https://oraclewonders.com/
+
 
 I wanted to create magic 8 ball themed page which would answer to different questions.
 The idea for this came perhaps from Codecademy's lessons but also I remember one site
@@ -25,10 +27,10 @@ Also I got help with how to make the eyes move and put modified sprite over it.
 
 
 Things to add:
-  
--Make the code more readable
--Put picture hint of the text adventures
+
+
 -Music
+-Better Media Queries
 
 ----------------
 Oracle and dragon sprites: made with free tool.

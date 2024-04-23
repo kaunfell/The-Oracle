@@ -1,4 +1,5 @@
 const answers = {
+    
     why:  [
         'Because.',
         'Because of reasons.',
@@ -15,6 +16,12 @@ const answers = {
         'You sure alredy know why.',
         'Because it is just awesome.',
         'It is not always so simple.',           //15
+        'Hiiohoi0',
+        'Hiiohoi1',
+        'Hiiohoi2',
+        'Hiiohoi3',
+        'Hiiohoi4', //20
+
 
 
 
@@ -104,11 +111,23 @@ const answers = {
 
 },
     "who": [
-    "Your mama.",
-    "The person you least expect.",
-    "A hairy gnome.",
-    "Gandalf the White.",
-    "A dragon.", //5
+        "My cat. He has a great name.", //CAT
+        "The person you least expect.",
+        "A hairy gnome.",
+        "Gandalf the White.",
+        "A dragon.", //5
+        "Wohoo, wohoo.",
+        "Not interested to know who.",
+        "Your mama.",
+        "A fancy unicorn. I know one named Bill.", //UNICORN
+        "Who indeed?", //10
+        "I would not like to tell who.",
+        'Hee, whoo, haa? Eh?',
+        'The next person you meet, perhaps?',
+        '"Who" is backwards "ohw".',
+        'Does not matter who.', //15
+
+
     ],
     what: [
         'You know what? My cat might know.', //CAT
@@ -116,12 +135,12 @@ const answers = {
         'What?',
         'It is a mystery...',
         'You already know the answer.', //5
-        'What?',
+        'What indeed?',
         'Explore and you will find out.',
         'The answer is in your heart.',
         'I will let this one speak for itself.',
         'Could be anything.', //10
-        'Could be 42',
+        'Could be 42.',
         'Do I look like I know? Ok, I know. Hehe.',
         'This and that.',
         'That is for you to discover.',
@@ -148,12 +167,12 @@ const answers = {
         'When you are being optimistic.', //15
     ],
     where: [
-        'No idea. But do you know the name of my cat?', //CAT
+        'Somewhere. But do you know the name of my cat?', //CAT
         'Where the light touches the ground.',
-        'No idea, but where this is: "second star to the right, and straight on till morning.',
+        'Where this is: "second star to the right, and straight on till morning.',
         'Hmm... under the rainbow?',
         'Your dog sure knows the answer.', //5
-        'Just try to remember.',
+        'Just try to remember where.',
         'Under the sea. No, just follow the fairy lights.',  //musicnotes?
         "Search anywhere, just don't go to the dragon's lair.",
         'In the land of possibilities.',
@@ -166,8 +185,9 @@ const answers = {
 
 
 
-],
-    "am I": [  //ottaakin tavun mukaan, esim. "name" johti tänne, siksi "am I"
+    ],
+
+    "am i": [  //ottaakin tavun mukaan, esim. "name" johti tänne, siksi "am I"
         'My cat with a great name likes you, so you must be ok.', //15 //CAT
         'Nobody is perfect, except my cat with a great name.', //CAT
         'We think you are doing great.',
@@ -238,8 +258,29 @@ const answers = {
         'Do I what? I do not understand.',
         'I would not advise anyone to admit that.', //15
 
+    ],
+
+    "are you": [
+        'Not me, but my cat with a great name is a good listener.', //CAT
+        'Let me ask: are you?',
+        'Is there anyone who is not?',
+        'Better not tell you that.',
+        'Well, I am the Oracle.', //5
+        'I would not advise anyone to admit that.',
+        'Me? Well... perhaps.',
+        'Arr harr, fiddle de dee, being a pirate is alright to be!', //EASTER EGG, PIRATE
+        'Am I what?',
+        'Not interested to answer to personal questions', //10
+        'Yes or no, does it matter?',
+        '...',
+        'Perhaps.',
+        'And why do you ask?',
+        'Not going to tell you.', //15
+
+
 
     ],
+
     general: [
     'No idea, but do you know the name of my cat?', //CAT
     'The answer is... umm, how should I read this?',
@@ -256,10 +297,33 @@ const answers = {
     'Are you sure you want to ask that?',
     'Hidden in the mists of magic: It is a mystery.',
     'I am baking right now, ask later.',
-    'Hmm, I am not in the mood to answer.'
-
+    'Hmm, I am not in the mood to answer.',
+    'I might know some magic but how would I ever know that?' //16
     ]
 
 };
 
-export default answers;
+
+const specialWords = {
+    gold: [
+        "Midas Touch turns everything into gold.",
+        "Gold is shiny.",
+        "Gold! Always believe in your soul.",
+        "It is just a chemical element.",
+        "It would be wise to invest in gold. But it may attract dragons.",
+    ],
+    life:[
+        "Life is like a box of chocolates, you never know what you're gonna get.",
+        "42.",
+        "It is good to make good deeds.",
+        "It is wise to practice gratitude for the things we have in life.",
+        "Write a bucket list and enjoy life."
+    ],
+
+}
+
+
+
+
+
+export {answers, specialWords};

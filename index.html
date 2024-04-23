@@ -9,9 +9,15 @@
         <meta google-site-verification: google0f303ee427122e7c.html> <!-- google search console -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2676869124180471"
         crossorigin="anonymous"></script> <!-- google adsense -->
-        <meta name="keywords" content="oracle, oracle game, ask a question, magic 8 ball, random answers, fortune teller,
-        mystic responses, question and answer game, fun divination">
+        <meta name="description" content="Magical Oracle gives answers to your questions">
+        <meta name="keywords" content="oracle, oracle game, ask a question, magic 8 ball, magic, random answers, fortune teller,
+        mystic responses, question and answer game, fun divination, chatbot, text adventure">
         <link href="./resurssit/css/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/nastyox/Rando.js@master/code/plain-javascript/2.0.0/rando-min.js"></script>
+        <script src="lodash.js"></script>
+    
+
+
         <script type="module" src="main.mjs" defer></script>
  
     </head>
@@ -45,15 +51,10 @@
 
 
 
-<!--errormessage -->
-    <div>
-      <p class="error">Hey, ask a question!</p>
-    </div>
-
 
 <!-- cat picture -->
     <div>
-        <img  id="herbert" src="./resurssit/kuvat/cat_animation800.gif" height="400" width="600">
+        <img  id="herbert" alt="black cat pixel gif" src="./resurssit/kuvat/herbert_animation.gif" >
         <p class="herbertBubble">Meow meow!</p>
     </div>
 
@@ -63,34 +64,34 @@
 
     <section class="oraclecontainer">
      <div >
-    <img class="oracleBottom" src="./resurssit/kuvat/uusimummo.png">
-    <img class="oracle" src="./resurssit/kuvat/oracle_no_eyes.png">
+    <img class="oracleBottom" alt="woman in a red robe"src="./resurssit/kuvat/uusimummo.png">
+    <img class="oracle" alt="woman in a red robe" src="./resurssit/kuvat/oracle_no_eyes.png">
         <div class="eyes">
-            <img class="leftEye" src="./resurssit/kuvat/silma2.png">
-            <img class="rightEye" src="./resurssit/kuvat/silma2.png">
+            <img class="leftEye" alt="eyes" src="./resurssit/kuvat/silma2.png">
+            <img class="rightEye" alt="eyes" src="./resurssit/kuvat/silma2.png">
         </div>
      </div>
-
+    </section>
     <div class="bubble">
      <p id="answer" class="answeranimate"></p>
     </div>
-    </section>
+
 
 <!-- Dragon and flames-->
     <section class="dragoncontainer">
         <div>
-            <img class="dragon" src="./resurssit/kuvat/dragon1_transparent.png">
+            <img class="dragon" alt="pixel dragon" src="./resurssit/kuvat/dragon1_transparent.png">
         </div>
         <div class="flamescontainer">
-            <img class="flame" src="./resurssit/kuvat/flame1_1000.gif">
-            <img class="flame" src="./resurssit/kuvat/flame1_1000.gif">
-            <img class="flame" src="./resurssit/kuvat/flame1_1000.gif">
-            <img class="flame" src="./resurssit/kuvat/flame1_1000.gif">
-            <img class="flame" src="./resurssit/kuvat/flame1_1000.gif">
-            <img class="flame" src="./resurssit/kuvat/flame1_1000.gif">
+            <!--img class="flame" src="./resurssit/kuvat/flame1_1000.gif"-->
+            <!--img class="flame" src="./resurssit/kuvat/flame1_1000.gif"-->
+            <!--img class="flame" src="./resurssit/kuvat/flame1_1000.gif"-->
+            <!--img class="flame" src="./resurssit/kuvat/flame1_1000.gif"-->
+            <!--img class="flame" src="./resurssit/kuvat/flame1_1000.gif"-->
+            <!--img class="flame" src="./resurssit/kuvat/flame1_1000.gif"-->
         </div>
         <div class="yesnocontainer">
-            <button class="yesButton" type="button" >Yes</button><!--onclick="dragonTrigger()"-->
+            <button class="yesButton" type="button" >Yes</button><!-- onclick="dragonTrigger()" -->
             <button class="noButton" type="button"  >No</button>
         </div>
     </section>
@@ -100,12 +101,17 @@
      <div class="counter">   
         <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
         <div class="elfsight-app-d4027d34-28f2-4e27-aed0-2afa894e6f7e" data-elfsight-app-lazy></div>
-        <div class="updated">Updated 4/4/2024</div>
+
+        <div class="tea">
+        <script  type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" 
+        data-slug="kaunfell" data-color="#c29369" data-emoji="🐲" data-font="Bree" data-text="Buy me a tea" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#FFDD00" ></script>
+        </div>
+
+        <div class="updated">Updated 4/2024</div>
     </div>
 
     </footer>
-
+    <!--Hi there, you curious person using inspector tool. Welcome see this page made from scratch:) -->
     </body>
 </html>
 
-<!-- C:\Users\Jenny\.vscode\VS_projekti_Omat\JavaScript\testialue\index.html  -->
